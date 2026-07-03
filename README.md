@@ -115,3 +115,7 @@ docker run -p 8080:8080 degree-planner
 **Backend:** Java 17 · Spring Boot 3 · JUnit 5 · Maven · Docker
 **Frontend:** Vue 3 · Vite
 **Deployment:** Render (Web Service + Static Site)
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
