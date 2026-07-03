@@ -1,8 +1,6 @@
 # Degree Planner
 
-· **[Live Demo](https://degree-planner-front.onrender.com/)**
-
-· **[API](https://degree-planner-t0zw.onrender.com/api/courses)**
+· **[Live Demo](https://degree-planner-front.onrender.com/)** · **[API](https://degree-planner-t0zw.onrender.com/api/courses)**
 
 A full-stack degree-planning tool that generates semester-by-semester course schedules. The backend models prerequisites as a **DAG**, resolves ordering with **topological sorting** (Kahn's algorithm), and greedily fills semesters under real-world constraints — credit limits and term availability. The frontend is a Vue 3 single-page app.
 
