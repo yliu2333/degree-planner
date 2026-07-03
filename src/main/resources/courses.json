@@ -1,0 +1,282 @@
+[
+  {
+    "id": "CS101",
+    "name": "Introduction to Programming",
+    "credits": 4,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": []
+  },
+  {
+    "id": "CS102",
+    "name": "Object-Oriented Programming",
+    "credits": 4,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["CS101"]
+  },
+  {
+    "id": "CS110",
+    "name": "Discrete Mathematics for Computing",
+    "credits": 3,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": []
+  },
+  {
+    "id": "MATH151",
+    "name": "Calculus I",
+    "credits": 4,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": []
+  },
+  {
+    "id": "MATH152",
+    "name": "Calculus II",
+    "credits": 4,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["MATH151"]
+  },
+  {
+    "id": "MATH221",
+    "name": "Linear Algebra",
+    "credits": 3,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["MATH151"]
+  },
+  {
+    "id": "STAT241",
+    "name": "Applied Statistics",
+    "credits": 3,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["MATH151"]
+  },
+  {
+    "id": "CS201",
+    "name": "Data Structures",
+    "credits": 4,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["CS102", "CS110"]
+  },
+  {
+    "id": "CS210",
+    "name": "Computer Organization",
+    "credits": 3,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["CS102"]
+  },
+  {
+    "id": "CS220",
+    "name": "Systems Programming",
+    "credits": 4,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS201", "CS210"]
+  },
+  {
+    "id": "CS230",
+    "name": "Database Systems",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS201"]
+  },
+  {
+    "id": "CS240",
+    "name": "Web Application Development",
+    "credits": 3,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["CS102"]
+  },
+  {
+    "id": "CS250",
+    "name": "Software Engineering",
+    "credits": 3,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["CS201"]
+  },
+  {
+    "id": "CS260",
+    "name": "Programming Languages",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS201"]
+  },
+  {
+    "id": "CS301",
+    "name": "Algorithms",
+    "credits": 4,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["CS201", "CS110"]
+  },
+  {
+    "id": "CS310",
+    "name": "Operating Systems",
+    "credits": 4,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS220"]
+  },
+  {
+    "id": "CS320",
+    "name": "Computer Networks",
+    "credits": 3,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS220"]
+  },
+  {
+    "id": "CS330",
+    "name": "Theory of Computation",
+    "credits": 3,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS301"]
+  },
+  {
+    "id": "CS340",
+    "name": "Computer Graphics",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS201", "MATH221"]
+  },
+  {
+    "id": "CS350",
+    "name": "Artificial Intelligence",
+    "credits": 3,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["CS301", "STAT241"]
+  },
+  {
+    "id": "CS360",
+    "name": "Machine Learning",
+    "credits": 3,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS350", "MATH221", "STAT241"]
+  },
+  {
+    "id": "CS370",
+    "name": "Cybersecurity Fundamentals",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS220"]
+  },
+  {
+    "id": "CS380",
+    "name": "Human-Computer Interaction",
+    "credits": 3,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS240"]
+  },
+  {
+    "id": "CS390",
+    "name": "Mobile Application Development",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS240", "CS250"]
+  },
+  {
+    "id": "CS401",
+    "name": "Compiler Design",
+    "credits": 4,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS260", "CS301"]
+  },
+  {
+    "id": "CS410",
+    "name": "Distributed Systems",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS310", "CS320"]
+  },
+  {
+    "id": "CS420",
+    "name": "Cloud Computing",
+    "credits": 3,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS310", "CS230"]
+  },
+  {
+    "id": "CS430",
+    "name": "Data Mining",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS230", "CS350"]
+  },
+  {
+    "id": "CS440",
+    "name": "Natural Language Processing",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS360"]
+  },
+  {
+    "id": "CS450",
+    "name": "Robotics",
+    "credits": 3,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS360", "CS210"]
+  },
+  {
+    "id": "CS460",
+    "name": "Computer Vision",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS360", "CS340"]
+  },
+  {
+    "id": "CS470",
+    "name": "Secure Software Development",
+    "credits": 3,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS370", "CS250"]
+  },
+  {
+    "id": "CS480",
+    "name": "Game Development",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS340", "CS250"]
+  },
+  {
+    "id": "CS485",
+    "name": "Software Architecture",
+    "credits": 3,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS250"]
+  },
+  {
+    "id": "CS490",
+    "name": "Senior Project I",
+    "credits": 3,
+    "offeredTerms": ["FALL"],
+    "prerequisiteIds": ["CS250", "CS301"]
+  },
+  {
+    "id": "CS491",
+    "name": "Senior Project II",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS490"]
+  },
+  {
+    "id": "CS492",
+    "name": "Undergraduate Research Seminar",
+    "credits": 2,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["CS301"]
+  },
+  {
+    "id": "CS495",
+    "name": "Internship Practicum",
+    "credits": 1,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["CS250"]
+  },
+  {
+    "id": "CS498",
+    "name": "Special Topics in Computer Science",
+    "credits": 3,
+    "offeredTerms": ["SPRING"],
+    "prerequisiteIds": ["CS301"]
+  },
+  {
+    "id": "ETH301",
+    "name": "Computing Ethics and Society",
+    "credits": 3,
+    "offeredTerms": ["FALL", "SPRING"],
+    "prerequisiteIds": ["CS250"]
+  }
+]
