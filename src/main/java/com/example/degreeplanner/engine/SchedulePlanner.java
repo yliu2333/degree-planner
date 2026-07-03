@@ -34,13 +34,10 @@ public class SchedulePlanner {
         Map<String, Course> catalog = loadCatalogById();
         Map<String, Integer> catalogOrder = catalogOrder(catalog);
 
-        // expand targets into their full prerequisite closure
         LinkedHashSet<String> requiredCourseIds = collectRequiredCourseIds(profile.targetCourseIds(), catalog);
 
-        // Kahn's algorithm gives prerequisite-first order
         List<String> topologicalOrder = topologicalSort(requiredCourseIds, catalog, catalogOrder);
 
-        // Completed courses satisfy prerequisites but do not need to consume seats or credits again.
         LinkedHashSet<String> unscheduledCourseIds = new LinkedHashSet<>(topologicalOrder);
         unscheduledCourseIds.removeAll(profile.completedCourseIds());
 
@@ -53,8 +50,6 @@ public class SchedulePlanner {
         int consecutiveNoProgressTerms = 0;
 
         while (!unscheduledCourseIds.isEmpty()) {
-            // A semester must only unlock future semesters, so we snapshot completed work before
-            // selecting courses; this avoids placing a course and its prerequisite side by side.
             Set<String> completedBeforeSemester = Set.copyOf(completed);
             List<Course> selectedCourses = new ArrayList<>();
             int credits = 0;
