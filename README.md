@@ -98,6 +98,8 @@ mvn test
 
 JUnit 5 coverage: topological order correctness, cycle detection, credit-limit boundaries, term-availability constraints, and a full freshman-to-CS491 plan (6 semesters).
 
+Benchmark coverage: a synthetic 10,000-course layered DAG plan completes in under 100 ms locally; JaCoCo generates HTML and XML reports under `target/site/jacoco`.
+
 ## Deployment
 
 - **Backend** — Dockerized (multi-stage: Maven build → slim JRE runtime), deployed as a Render Web Service. CORS origin controlled via `ALLOWED_ORIGIN` env var.
