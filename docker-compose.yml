@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: degree_planner
+      POSTGRES_USER: degree_planner
+      POSTGRES_PASSWORD: degree_planner
+    volumes:
+      - degree-planner-postgres:/var/lib/postgresql/data
+
+volumes:
+  degree-planner-postgres:

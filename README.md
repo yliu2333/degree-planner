@@ -23,7 +23,7 @@ Objective: fewest semesters to reach the target courses.
 ```
 ├── src/main/java          Spring Boot backend
 │   ├── domain/            Course, StudentProfile, Semester, SemesterPlan, Term
-│   ├── repository/        CourseRepository (interface) + MockCourseRepository
+│   ├── repository/        CourseRepository (interface) + Mock & Postgres implementations
 │   ├── engine/            SchedulePlanner — pure Java, zero Spring dependencies
 │   └── api/               REST controllers + global exception handling
 └── frontend/              Vue 3 (Composition API + Vite) SPA
@@ -31,7 +31,7 @@ Objective: fewest semesters to reach the target courses.
 
 Design decisions:
 
-- **Repository pattern** — the engine depends only on the `CourseRepository` interface. Swapping the JSON-backed mock for MySQL requires zero engine changes.
+- **Repository pattern** — the engine depends only on the `CourseRepository` interface; the JSON-backed mock and the PostgreSQL implementation swap via Spring profiles with zero engine changes.
 - **Framework-free engine** — `SchedulePlanner` takes its repository via constructor injection and has no Spring imports, so it's unit-testable in plain JUnit without a Spring context.
 - **Decoupled deployment** — backend (Docker on Render) and frontend (static site on Render) deploy independently; the frontend targets the API via a build-time env var.
 
@@ -80,6 +80,18 @@ mvn spring-boot:run
 # API at http://localhost:8080
 ```
 
+By default the backend uses `MockCourseRepository`, which loads `src/main/resources/courses.json`.
+
+**Backend with PostgreSQL**:
+
+```bash
+docker compose up -d
+mvn spring-boot:run -Dspring-boot.run.profiles=postgres
+# API at http://localhost:8080
+```
+
+The `postgres` Spring profile activates `PostgresCourseRepository`, connects to the Postgres service from `docker-compose.yml`, and runs Flyway migrations from `src/main/resources/db/migration`.
+
 **Frontend** (Node 18+):
 
 ```bash
@@ -98,6 +110,8 @@ mvn test
 
 JUnit 5 coverage: topological order correctness, cycle detection, credit-limit boundaries, term-availability constraints, and a full freshman-to-CS491 plan (6 semesters).
 
+Integration: a Testcontainers-based test spins up real PostgreSQL, runs Flyway migrations, and verifies the repository against seeded data.
+
 Benchmark coverage: a synthetic 10,000-course layered DAG plan completes in under 100 ms locally; JaCoCo generates HTML and XML reports under `target/site/jacoco`.
 
 ## Deployment
@@ -112,7 +126,7 @@ docker run -p 8080:8080 degree-planner
 
 ## Tech Stack
 
-**Backend:** Java 17 · Spring Boot 3 · JUnit 5 · Maven · Docker
+**Backend:** Java 17 · Spring Boot 3 · PostgreSQL · Flyway · JUnit 5 · Testcontainers · Maven · Docker
 **Frontend:** Vue 3 · Vite
 **Deployment:** Render (Web Service + Static Site)
 
